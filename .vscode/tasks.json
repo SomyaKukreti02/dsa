@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build and run",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "${file}",
+                "-o", "${fileBasenameNoExtension}.exe",
+                "&&",
+                "timeout", "10",
+                "./${fileBasenameNoExtension}.exe",
+                "<", "input.txt",
+                ">", "output.txt"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Compiles and runs the current C++ file with input and output files."
+        }
+    ]
+}

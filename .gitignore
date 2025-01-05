@@ -1,3 +1,14 @@
-.vscode
-*.exe
+# Ignore build files and executables
+**/*.out
+**/*.exe
 
+# Ignore files with no extensions
+**
+
+# Allow specific file types
+!**/*.cpp
+!**/*.c
+!**/*.json
+
+# Allow directories (so their contents can be checked against rules)
+!**/
