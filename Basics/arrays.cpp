@@ -1,17 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-// declaring a function
-void printName(string name)
+int findSecondLargest(int n, vector<int> arr)
 {
-    cout << "hey!" << name;
+    int l = -1;
+    int sl = -1;
+    for (int i = 0; i < n; i++)
+    {
+        int num = arr[i];
+        if (num > l)
+        {
+            sl = l;
+            l = num;
+        }
+        else if (num > sl && num != l)
+        {
+            sl = num;
+        }
+    }
+    return sl;
 }
-
 int main()
 {
-    // calling a function
-    string name;
-    cin >> name;
-    printName(name);
+    int tc;
+    cin >> tc;
+    for (int i = 1; i <= tc; i++)
+    {
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+        cout << findSecondLargest(n,arr) <<endl;
+    }
+
     return 0;
 }
